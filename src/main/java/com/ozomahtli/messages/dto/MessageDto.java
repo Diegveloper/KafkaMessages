@@ -1,5 +1,7 @@
 package com.ozomahtli.messages.dto;
 
+import java.time.LocalDateTime;
+
 public class MessageDto {
     private String key;
     private String message;
@@ -19,7 +21,9 @@ public class MessageDto {
     }
 
     public String getMessage() {
-        return message;
+        LocalDateTime dateTime = LocalDateTime.now();
+
+        return "[" + dateTime +"]: "+ message;
     }
 
     public void setMessage(String message) {
