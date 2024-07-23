@@ -16,9 +16,9 @@ import { HttpClientModule } from '@angular/common/http';
 })
 export class ChatComponent {
   constructor(private msgService: MessageService){}
-  sendMsg(msg: HTMLInputElement){
+  sendMsg(key:HTMLInputElement ,msg: HTMLInputElement){
     const data = {
-      key: 'abelardo',
+      key: key.value,
       message: msg.value
     };
     this.msgService.sendMessage(data).subscribe(

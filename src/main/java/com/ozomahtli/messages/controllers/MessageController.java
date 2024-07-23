@@ -13,7 +13,7 @@ public class MessageController {
 
     @PostMapping
     public String receiveMessage(@RequestBody MessageDto msg){
-        kfkSrv.sendMessage(msg.getMessage());
+        kfkSrv.sendMessage(msg.getKey(),msg.getMessage());
         System.out.println(msg.getMessage());
         return "200";
     }

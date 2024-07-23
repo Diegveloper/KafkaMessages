@@ -6,7 +6,7 @@
         <img class="icon" src="../../assets/svg/key.svg" alt="image">
         <mat-form-field class="key">
           <mat-label>Topic Key</mat-label>
-          <input matInput>
+          <input matInput #keyInput>
         </mat-form-field>
 
           <button class="keyButton" mat-raised-button color="primary">Connect</button>
@@ -15,10 +15,10 @@
         <img class="icon" src="../../assets/svg/write.svg" alt="image">
         <mat-form-field class="key">
           <mat-label>Message</mat-label>
-          <input matInput #messageInput (keydown.enter)="sendMsg(messageInput)">
+          <input matInput #messageInput (keydown.enter)="sendMsg( keyInput, messageInput)">
         </mat-form-field>
 
-          <button (click)="sendMsg(messageInput)" class="keyButton" mat-raised-button color="primary">Send</button>
+          <button (click)="sendMsg(keyInput, messageInput)" class="keyButton" mat-raised-button color="primary">Send</button>
       </div>
       <mat-form-field class="textArea">
         <mat-label>Messages</mat-label>
